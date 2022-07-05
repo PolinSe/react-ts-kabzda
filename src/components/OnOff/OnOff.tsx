@@ -5,7 +5,9 @@ type OnOffType = {
 }
 
 export const OnOff = (props: OnOffType) => {
+
     let [on, setOn] = useState(false)
+
     const buttons = {
         display: 'flex',
         alignItems: 'center',
