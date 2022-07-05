@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import s from './App.module.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Raiting} from "./components/Raiting/Raiting";
+import {OnOff} from './components/OnOff/OnOff';
 
 function App() {
     return (
-        <div>
+        <div className={s.app}>
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
             Article 1
@@ -19,6 +20,9 @@ function App() {
             <Raiting value={3}/>
             <Raiting value={4}/>
             <Raiting value={5}/>
+            <OnOff/>
+            <OnOff/>
+
         </div>
     );
 }
