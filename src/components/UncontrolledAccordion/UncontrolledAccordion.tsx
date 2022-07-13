@@ -6,23 +6,26 @@ type UncontrolledAccordionPropsType = {
 
 type AccordionTitlePropsType = {
     title: string
+    callBack: () => void
 }
 
 export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 
     let [collapsed, setCollapsed] = useState(false)
 
-       return (
+    return (
         <div>
-            <AccordionTitle title={ props.titleValue }/>
-            <button onClick = { () => setCollapsed(!collapsed) }>TOGGLE</button>
-            { !collapsed && <AccordionBody/> }
+            <AccordionTitle title={props.titleValue} callBack={() => setCollapsed(!collapsed)}/>
+
+            {!collapsed && <AccordionBody/>}
         </div>
     );
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    return <h3>--{ props.title }--</h3>
+
+
+    return <h3 onClick={() => props.callBack()}>--{props.title}--</h3>
 }
 
 function AccordionBody() {
