@@ -2,7 +2,7 @@ import React from "react";
 
 type OnOffType = {
     on: boolean
-    changeIndicator: (on:boolean) => void
+    onChange: (on:boolean) => void
 }
 
 export const OnOff = (props: OnOffType) => {
@@ -34,11 +34,11 @@ export const OnOff = (props: OnOffType) => {
     return (
         <div style={buttons}>
             <div style={onStyle} onClick={() => {
-                props.changeIndicator(true)
+                props.onChange(true)
             }}> On
             </div>
             <div style={offStyle} onClick={() => {
-                props.changeIndicator(false)
+                props.onChange(false)
             }}> Off
             </div>
             <div style={indicatorStyle}></div>
