@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
 import Accordion from "./components/Accordion/Accordion";
-import {Raiting} from "./components/Raiting/Raiting";
+import {Rating} from "./components/Rating/Rating";
 import {OnOff} from './components/OnOff/OnOff';
-import {RatingValueType} from "./components/Raiting/Raiting"
+import {RatingValueType} from "./components/Rating/Rating"
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
-import {UncontrolledRaiting} from './components/UncontrolledRaiting/UncontrolledRaiting';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 
 function App() {
 
-    let [raitingValue, setRaitingValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0)
+    let [ratingValue, setRatingValue] = useState<0 | 1 | 2 | 3 | 4 | 5>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [on, setOn] = useState(false)
 
-    const changeRaitingValue = (value: RatingValueType) => setRaitingValue(value)
+    const changeRatingValue = (value: RatingValueType) => setRatingValue(value)
     const changeCollapsed = () => setAccordionCollapsed(!accordionCollapsed)
 
     return (
@@ -36,23 +36,23 @@ function App() {
             <PageTitle title={'This is APP component'}/>
             <PageTitle title={'My friends'}/>
 
-            Article 1: ControlledRaiting
-            <Raiting value={raitingValue} onClick={changeRaitingValue}/>
+            Article 1: ControlledRating
+            <Rating value={ratingValue} onClick={changeRatingValue}/>
 
             {/*<Accordion titleValue={'Menu'} collapsed={true}/>*/}
             {/*<Accordion titleValue={'Users'} collapsed={false}/>*/}
 
             {/*Article 2*/}
-            {/*<Raiting value={0}/>*/}
-            {/*<Raiting value={1}/>*/}
-            {/*<Raiting value={2}/>*/}
-            {/*<Raiting value={3}/>*/}
-            {/*<Raiting value={4}/>*/}
-            {/*<Raiting value={5}/>*/}
+            {/*<Rating value={0}/>*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
 
             <div>--------------</div>
-            Article 3: UncontrolledRaiting
-            <UncontrolledRaiting/>
+            Article 3: UncontrolledRating
+            <UncontrolledRating/>
 
         </div>
     );
