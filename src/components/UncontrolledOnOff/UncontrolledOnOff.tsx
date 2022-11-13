@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 
 type OnOffType = {
+    defaultOn?: boolean
     onChange: (on: boolean) => void
 }
 
 export const UncontrolledOnOff = (props: OnOffType) => {
 
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
     const buttons = {
         display: 'flex',
