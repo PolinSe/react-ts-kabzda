@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
-import Accordion from "./components/Accordion/Accordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import {OnOff} from './components/OnOff/OnOff';
 import {RatingValueType} from "./components/Rating/Rating"
-import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
-import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
+import {UncontrolledRaiting} from './components/UncontrolledRating/UncontrolledRating';
 
 function App() {
 
@@ -52,7 +51,7 @@ function App() {
 
             <div>--------------</div>
             Article 3: UncontrolledRating
-            <UncontrolledRating/>
+            <UncontrolledRaiting defaultValue={1} onChange={setRatingValue}/>
 
         </div>
     );
