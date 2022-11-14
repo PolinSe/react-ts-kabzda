@@ -27,6 +27,11 @@ function App() {
                 titleValue={'Menu'}
                 changeCollapsed={changeCollapsed}
                 collapsed={accordionCollapsed}
+                items={[{name: 'Anna', value: 1}, {name: 'Olga', value: 2}, {name: 'Helen', value: 3}, {
+                    name: 'Kate',
+                    value: 4
+                }]}
+                onClick={(value: any) => alert(value)}
             />
 
             {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
