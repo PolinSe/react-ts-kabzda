@@ -6,6 +6,8 @@ import {OnOff} from './components/OnOff/OnOff';
 import {RatingValueType} from "./components/Rating/Rating"
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import {UncontrolledRaiting} from './components/UncontrolledRating/UncontrolledRating';
+import {Clock} from './components/Clock/Clock';
+import {Button} from './stories/Button';
 
 function App() {
 
@@ -13,11 +15,20 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [on, setOn] = useState(false)
 
+    const [isAnalog, setAnalog] = useState(true)
+
     const changeRatingValue = (value: RatingValueType) => setRatingValue(value)
     const changeCollapsed = () => setAccordionCollapsed(!accordionCollapsed)
 
+    const changeClockType = () => {
+        setAnalog(!isAnalog)
+    }
     return (
         <div className={s.app}>
+            <div className={s.clock}>
+                <Button label={isAnalog?'change to digital clock':'change to analog clock'} onClick={changeClockType}/>
+                <Clock isAnalog={isAnalog}/>
+            </div>
 
             {/*<OnOff on={on} changeIndicator={setOn}/>*/}
 

@@ -1,0 +1,8 @@
+
+.digital {
+    padding: 10px;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    color: #444;
+    text-align: center;
+}
